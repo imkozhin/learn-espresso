@@ -11,7 +11,7 @@ import org.hamcrest.core.AllOf.allOf
 
 class ToolbarElement {
     fun toolbarMenuButton(): ViewInteraction {
-        return onView(withContentDescription("Open navigation drawer"))
+        return onView(withContentDescription(R.string.navigation_drawer_open))
     }
 
     fun toolbarMenuHeading(text: String): ViewInteraction {

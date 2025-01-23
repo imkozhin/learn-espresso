@@ -31,6 +31,7 @@ class MenuStep {
 
     fun clickMenuHomeButton(){
         menuElement.menuHomeButton()
+            .check(matches(isDisplayed()))
             .perform(click())
     }
 
@@ -46,6 +47,7 @@ class MenuStep {
 
     fun clickMenuGalleryButton() {
         menuElement.menuGalleryButton()
+            .check(matches(isDisplayed()))
             .perform(click())
     }
 
@@ -61,6 +63,7 @@ class MenuStep {
 
     fun clickMenuSlideshowButton(){
         menuElement.menuSlideshowButton()
+            .check(matches(isDisplayed()))
             .perform(click())
     }
 

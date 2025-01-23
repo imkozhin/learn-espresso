@@ -13,12 +13,28 @@ class ToolbarStep {
             .perform(click())
     }
 
-    fun checkCurrentScreenToolbarIsDisplayed(screen: String) {
+    fun checkToolbarMenuButtonIsDisplayed() {
         toolbarElement.toolbarMenuButton()
             .check(matches(isDisplayed()))
-        toolbarElement.toolbarMenuHeading(screen)
-            .check(matches(isDisplayed()))
+    }
+
+    fun checkToolbarMenuOptionsButtonIsDisplayed() {
         toolbarElement.toolbarMenuOptionsButton()
+            .check(matches(isDisplayed()))
+    }
+
+    fun checkHomeToolbarIsDisplayed() {
+        toolbarElement.toolbarMenuHeading("Home")
+            .check(matches(isDisplayed()))
+    }
+
+    fun checkGalleryToolbarIsDisplayed() {
+        toolbarElement.toolbarMenuHeading("Gallery")
+            .check(matches(isDisplayed()))
+    }
+
+    fun checkSlideshowToolbarIsDisplayed() {
+        toolbarElement.toolbarMenuHeading("Slideshow")
             .check(matches(isDisplayed()))
     }
 }

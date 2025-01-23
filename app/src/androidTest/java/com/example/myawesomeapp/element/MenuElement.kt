@@ -14,17 +14,17 @@ class MenuElement {
     }
 
     fun menuName(): ViewInteraction {
-        return onView(withText("Android Studio"))
+        return onView(withText(R.string.nav_header_title))
     }
 
     fun menuEmail(): ViewInteraction {
-        return onView(withText("android.studio@android.com"))
+        return onView(withText(R.string.nav_header_subtitle))
     }
 
     fun menuHomeButton(): ViewInteraction {
         return onView(
             allOf(
-                withText("Home"),
+                withText(R.string.menu_home),
                 isDescendantOfA(withId(R.id.nav_home))
             )
         )
@@ -33,7 +33,7 @@ class MenuElement {
     fun menuGalleryButton(): ViewInteraction {
         return onView(
             allOf(
-                withText("Gallery"),
+                withText(R.string.menu_gallery),
                 isDescendantOfA(withId(R.id.nav_gallery))
             )
         )
@@ -42,7 +42,7 @@ class MenuElement {
     fun menuSlideshowButton(): ViewInteraction {
         return onView(
             allOf(
-                withText("Slideshow"),
+                withText(R.string.menu_slideshow),
                 isDescendantOfA(withId(R.id.nav_slideshow))
             )
         )
