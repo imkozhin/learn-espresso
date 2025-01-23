@@ -25,7 +25,7 @@ class MyAwesomeTests {
     private val notification = NotificationStep()
     private val slideshow = SlideshowStep()
     private val toolbar = ToolbarStep()
-    
+
     @Before
     fun setup() {
         scenario = ActivityScenario.launch(MainActivity::class.java)
@@ -41,13 +41,17 @@ class MyAwesomeTests {
         toolbar.clickToolbarMenuButton()
         menu.clickMenuSlideshowButton()
         menu.checkMenuSlideshowButtonIsChecked()
-        toolbar.checkCurrentScreenToolbarIsDisplayed("Slideshow")
+        toolbar.checkToolbarMenuButtonIsDisplayed()
+        toolbar.checkToolbarMenuOptionsButtonIsDisplayed()
+        toolbar.checkSlideshowToolbarIsDisplayed()
         slideshow.checkSlideshowScreenTextIsDisplayed()
     }
 
     @Test
     fun checkMenuComposition() {
-        toolbar.checkCurrentScreenToolbarIsDisplayed("Home")
+        toolbar.checkToolbarMenuButtonIsDisplayed()
+        toolbar.checkToolbarMenuOptionsButtonIsDisplayed()
+        toolbar.checkHomeToolbarIsDisplayed()
         toolbar.clickToolbarMenuButton()
         menu.checkMenuImageViewIsDisplayed()
         menu.checkMenuNameIsDisplayed()
@@ -63,10 +67,10 @@ class MyAwesomeTests {
     @Test
     fun checkGreenButton(){
         main.checkMainScreenTextIsDisplayed()
-        fab.checkFabIsDisplayed()
-        fab.clickFab()
-        fab.checkFabNotificationIsDisplayed()
-        fab.swipeFabNotification()
+        fab.checkGreenButtonIsDisplayed()
+        fab.clickGreenButton()
+        fab.checkGreenButtonNotificationIsDisplayed()
+        fab.swipeGreenButtonNotification()
     }
 
     @Test
@@ -74,7 +78,9 @@ class MyAwesomeTests {
         toolbar.clickToolbarMenuButton()
         menu.clickMenuGalleryButton()
         menu.checkMenuGalleryButtonIsChecked()
-        toolbar.checkCurrentScreenToolbarIsDisplayed("Gallery")
+        toolbar.checkToolbarMenuButtonIsDisplayed()
+        toolbar.checkToolbarMenuOptionsButtonIsDisplayed()
+        toolbar.checkGalleryToolbarIsDisplayed()
         gallery.checkGalleryRecycleViewIsDisplayed()
         gallery.clickGalleryItemListFirstPosition()
         notification.checkGalleryNotificationTextIsDisplayed("1")

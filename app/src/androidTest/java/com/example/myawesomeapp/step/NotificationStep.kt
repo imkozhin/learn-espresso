@@ -9,13 +9,13 @@ class NotificationStep {
     private val notificationElement = NotificationElement()
 
     fun checkGalleryNotificationTextIsDisplayed(position: String) {
-        notificationElement.notificationText("Item #"+position+" clicked successfully!")
-            .check(matches(isDisplayed())
-        )
+        notificationElement.notificationText("Item #$position clicked successfully!")
+            .check(matches(isDisplayed()))
     }
 
     fun swipeGalleryNotificationPopup() {
         notificationElement.notificationPopup()
+            .check(matches(isDisplayed()))
             .perform(swipeRight())
     }
 }

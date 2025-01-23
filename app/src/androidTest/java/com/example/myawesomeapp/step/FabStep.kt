@@ -9,23 +9,24 @@ import com.example.myawesomeapp.element.FabElement
 class FabStep {
     private val fabElement = FabElement()
 
-    fun checkFabIsDisplayed(){
+    fun checkGreenButtonIsDisplayed(){
         fabElement.fab()
             .check(matches(isDisplayed()))
     }
 
-    fun clickFab(){
+    fun clickGreenButton(){
         fabElement.fab()
             .perform(click())
     }
 
-    fun checkFabNotificationIsDisplayed(){
+    fun checkGreenButtonNotificationIsDisplayed(){
         fabElement.fabNotification()
             .check(matches(isDisplayed()))
     }
 
-    fun swipeFabNotification(){
+    fun swipeGreenButtonNotification(){
         fabElement.fabNotification()
+            .check(matches(isDisplayed()))
             .perform(swipeRight())
     }
 }
