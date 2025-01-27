@@ -2,8 +2,8 @@ package com.example.myawesomeapp
 
 import androidx.test.core.app.ActivityScenario
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.example.myawesomeapp.step.FabStep
 import com.example.myawesomeapp.step.GalleryStep
+import com.example.myawesomeapp.step.GreenButtonStep
 import com.example.myawesomeapp.step.MainScreenStep
 import com.example.myawesomeapp.step.MenuStep
 import com.example.myawesomeapp.step.NotificationStep
@@ -18,7 +18,7 @@ import org.junit.runner.RunWith
 class MyAwesomeTests {
     private lateinit var scenario: ActivityScenario<MainActivity>
 
-    private val fab = FabStep()
+    private val greenButton = GreenButtonStep()
     private val gallery = GalleryStep()
     private val main = MainScreenStep()
     private val menu = MenuStep()
@@ -67,10 +67,10 @@ class MyAwesomeTests {
     @Test
     fun checkGreenButton(){
         main.checkMainScreenTextIsDisplayed()
-        fab.checkGreenButtonIsDisplayed()
-        fab.clickGreenButton()
-        fab.checkGreenButtonNotificationIsDisplayed()
-        fab.swipeGreenButtonNotification()
+        greenButton.checkGreenButtonIsDisplayed()
+        greenButton.clickGreenButton()
+        greenButton.checkGreenButtonNotificationIsDisplayed()
+        greenButton.swipeGreenButtonNotification()
     }
 
     @Test

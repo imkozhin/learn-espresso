@@ -10,6 +10,7 @@ class ToolbarStep {
 
     fun clickToolbarMenuButton(){
         toolbarElement.toolbarMenuButton()
+            .check(matches(isDisplayed()))
             .perform(click())
     }
 
