@@ -4,28 +4,29 @@ import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.swipeRight
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
-import com.example.myawesomeapp.element.FabElement
+import com.example.myawesomeapp.element.GreenButtonElement
 
-class FabStep {
-    private val fabElement = FabElement()
+class GreenButtonStep {
+    private val greenButtonElement = GreenButtonElement()
 
     fun checkGreenButtonIsDisplayed(){
-        fabElement.fab()
+        greenButtonElement.greenButton()
             .check(matches(isDisplayed()))
     }
 
     fun clickGreenButton(){
-        fabElement.fab()
+        greenButtonElement.greenButton()
+            .check(matches(isDisplayed()))
             .perform(click())
     }
 
     fun checkGreenButtonNotificationIsDisplayed(){
-        fabElement.fabNotification()
+        greenButtonElement.greenButtonNotification()
             .check(matches(isDisplayed()))
     }
 
     fun swipeGreenButtonNotification(){
-        fabElement.fabNotification()
+        greenButtonElement.greenButtonNotification()
             .check(matches(isDisplayed()))
             .perform(swipeRight())
     }
